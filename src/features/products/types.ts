@@ -1,18 +1,42 @@
-export type ProductStatus = "aktiv" | "entwurf" | "gesperrt" | "pruefung";
+export type ProductStatus = "approved" | "entwurf" | "gesperrt" | "pruefung" | "aktiv";
 
 export type Product = {
   id: string;
-  name: string;
-  category: string;
-  mhNumber: string;
-  c4cNumber: string;
-  status: ProductStatus;
-  imageUrl: string;
-  updatedAt: string;
-  owner: string;
+  mhArticelNumber: string;
+  c4cArticelNumber: string;
+  mhArticelName: string;
+  c4cArticelName: string;
+  beutelBarcode: string;
+  eanKartonCode: string;
+  kartonNumberName: string;
+  
+  // Notes
   c4cNotes?: string;
   mnhNotes?: string;
-  photos?: string[]; // Array of up to 6 photo URLs/paths
+  
+  // Specifications
+  mhd: string; // Best before date
+  packagingType: "zipper" | "gastro";
+  coffeeForm: "bohne" | "gemahlen";
+  weight: string;
+  
+  // Logistics
+  paletteType: "euro" | "einweg";
+  layersPerPalette: number;
+  piecesPerCarton: number;
+  cartonsPerPalette: number;
+  
+  status: ProductStatus;
+  updatedAt: string;
+  owner: string;
+
+  // Reference Photos
+  musterVorderseite?: string;
+  musterRueckseite?: string;
+  musterStempel?: string;
+  musterBarcode?: string;
+  musterSeitenPhoto?: string;
+  musterKartonEtikett?: string;
 };
 
 export type ProductListResponse = {
