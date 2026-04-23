@@ -5,6 +5,7 @@ import {
   HardHat,
   History,
   Settings,
+  Zap,
   type LucideIcon,
 } from "lucide-react";
 
@@ -35,10 +36,16 @@ export const navItems: NavItem[] = [
     shortcut: ["q", "q"],
   },
   {
-    title: "MF Maschinenführer",
+    title: "Maschinenführer",
     url: "/dashboard/machine",
     icon: HardHat,
     shortcut: ["m", "m"],
+  },
+  {
+    title: "MF Ansicht",
+    url: "/dashboard/machine/product",
+    icon: Zap,
+    shortcut: ["v", "v"],
   },
   {
     title: "Audit-Logs",

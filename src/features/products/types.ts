@@ -10,6 +10,9 @@ export type Product = {
   imageUrl: string;
   updatedAt: string;
   owner: string;
+  c4cNotes?: string;
+  mnhNotes?: string;
+  photos?: string[]; // Array of up to 6 photo URLs/paths
 };
 
 export type ProductListResponse = {
