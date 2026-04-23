@@ -23,7 +23,7 @@ export const navItems: NavItem[] = [
     shortcut: ["d", "d"],
   },
   {
-    title: "Stammdaten",
+    title: "Kaffee-Produkte",
     url: "/dashboard/product",
     icon: Database,
     shortcut: ["p", "p"],

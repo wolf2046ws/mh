@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getQueryClient } from "@/lib/query-client";
 import { ProductsTable } from "@/features/products/products-table";
+import { AddProductDialog } from "@/features/products/add-product-dialog";
 import { fetchProducts, productsQueryKey } from "@/features/products/queries";
 
 type SearchParams = Promise<{
@@ -38,9 +39,9 @@ export default async function ProductPage({
       <div className="space-y-6">
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
-            <h2 className="text-2xl font-semibold tracking-tight">Stammdaten</h2>
+            <h2 className="text-2xl font-semibold tracking-tight">Kaffee-Stammdaten</h2>
             <p className="text-muted-foreground text-sm">
-              Verwalten Sie alle MH/C4C Artikel und synchronisieren Sie mit dem globalen System.
+              Verwalten Sie alle Kaffeeprodukte, Bohnen und Verpackungsmaterialien.
             </p>
           </div>
           <div className="flex gap-2">
@@ -48,10 +49,7 @@ export default async function ProductPage({
               <Download />
               CSV Export
             </Button>
-            <Button size="sm">
-              <Plus />
-              Neuer Artikel
-            </Button>
+            <AddProductDialog />
           </div>
         </div>
 

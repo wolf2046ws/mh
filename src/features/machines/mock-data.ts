@@ -15,13 +15,13 @@ const names = [
   "Katharina Zimmermann",
 ];
 const machines = [
-  "CNC-M12",
-  "Laser-L4",
-  "Fräse-F7",
-  "Presse-P3",
-  "Schleif-S9",
-  "Schweiß-W2",
-  "Roboter-R5",
+  "Röstmaschine-R1",
+  "Mühle-M4",
+  "Verpackungsanlage-V2",
+  "Abfüllanlage-A7",
+  "Vakuumpresse-V9",
+  "Mischmaschine-M2",
+  "Etikettierer-E5",
 ];
 const shifts: Shift[] = ["morning", "afternoon", "night"];
 const statuses: OperatorStatus[] = ["active", "break", "off_duty", "sick"];

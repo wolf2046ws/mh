@@ -20,10 +20,10 @@ export default async function OverviewPage() {
       <div className="space-y-6">
         <div>
           <h2 className="text-2xl font-semibold tracking-tight">
-            Katalogübersicht
+            Kaffee-Produktion Übersicht
           </h2>
           <p className="text-muted-foreground text-sm">
-            MH/C4C Stammdaten auf einen Blick.
+            Stammdaten und KPIs der Kaffeeproduktion auf einen Blick.
           </p>
         </div>
 

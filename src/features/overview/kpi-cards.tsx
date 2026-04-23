@@ -13,7 +13,7 @@ export function KpiCards() {
 
   const items = [
     {
-      label: "Gesamtartikel",
+      label: "Kaffeeprodukte",
       value: data.totalProducts.toLocaleString("de-DE"),
       hint: "+12 % diesen Monat",
       icon: Package,
@@ -37,7 +37,7 @@ export function KpiCards() {
       icon: TrendingUp,
     },
     {
-      label: "Aktive MF",
+      label: "Maschinenführer",
       value: data.activeOperators.toString(),
       hint: "Gerade im Dienst",
       icon: Users2,
