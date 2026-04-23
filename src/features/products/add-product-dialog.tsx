@@ -74,7 +74,7 @@ export function AddProductDialog() {
     reset,
     formState: { errors },
   } = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     defaultValues: {
       mhArticelNumber: "",
       c4cArticelNumber: "",
@@ -149,7 +149,7 @@ export function AddProductDialog() {
           </DialogDescription>
         </DialogHeader>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit as any)}>
           <Tabs defaultValue="stamm" className="w-full">
             <div className="px-6 border-b">
               <TabsList className="bg-transparent h-auto p-0 gap-6 w-full justify-start rounded-none">
@@ -318,7 +318,7 @@ export function AddProductDialog() {
             </div>
             <div className="flex gap-3">
               <Button type="button" variant="ghost" onClick={() => setOpen(false)}>Abbrechen</Button>
-              <Button type="submit" onClick={handleSubmit(onSubmit)}>Produkt anlegen</Button>
+              <Button type="submit" onClick={handleSubmit(onSubmit as any)}>Produkt anlegen</Button>
             </div>
           </DialogFooter>
         </form>

@@ -60,14 +60,25 @@ export function generateProducts(count = 120): Product[] {
     d.setDate(d.getDate() - daysAgo);
     return {
       id: `prod-${String(i + 1).padStart(4, "0")}`,
-      name,
-      category: categories[i % categories.length],
-      mhNumber: `MH-${1000 + i * 7}-${String.fromCharCode(65 + (i % 26))}`,
-      c4cNumber: `C4C-${20000 + i * 11}`,
+      mhArticelNumber: `MH-${1000 + i * 7}-${String.fromCharCode(65 + (i % 26))}`,
+      c4cArticelNumber: `C4C-${20000 + i * 11}`,
+      mhArticelName: name,
+      c4cArticelName: name,
+      beutelBarcode: `123456789${i}`,
+      eanKartonCode: `987654321${i}`,
+      kartonNumberName: `Karton ${i}`,
+      mhd: "12 Monate",
+      packagingType: i % 2 === 0 ? "zipper" : "gastro",
+      coffeeForm: i % 2 === 0 ? "bohne" : "gemahlen",
+      weight: "500g",
+      paletteType: i % 2 === 0 ? "euro" : "einweg",
+      layersPerPalette: 5,
+      piecesPerCarton: 10,
+      cartonsPerPalette: 50,
       status: statuses[idx],
-      imageUrl: `https://picsum.photos/seed/coffee-${i}/200/150`,
       updatedAt: d.toISOString(),
       owner: owners[i % owners.length],
+      musterVorderseite: `https://picsum.photos/seed/coffee-${i}/200/150`,
     };
   });
 }

@@ -35,7 +35,7 @@ export async function fetchOverviewStats(): Promise<OverviewStats> {
 
   const catalogByCategory = Array.from(
     mockProducts.reduce((acc, p) => {
-      acc.set(p.category, (acc.get(p.category) ?? 0) + 1);
+      acc.set(p.coffeeForm, (acc.get(p.coffeeForm) ?? 0) + 1);
       return acc;
     }, new Map<string, number>()),
   ).map(([category, count]) => ({ category, count }));

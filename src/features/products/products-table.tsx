@@ -43,8 +43,8 @@ const columns: ColumnDef<Product>[] = [
     cell: ({ row }) => (
       <div className="bg-muted relative size-12 overflow-hidden rounded-md">
         <Image
-          src={row.original.imageUrl}
-          alt={row.original.name}
+          src={row.original.musterVorderseite || ""}
+          alt={row.original.mhArticelName}
           fill
           sizes="48px"
           unoptimized
@@ -54,29 +54,29 @@ const columns: ColumnDef<Product>[] = [
     ),
   },
   {
-    accessorKey: "name",
+    accessorKey: "mhArticelName",
     header: "Artikel",
     cell: ({ row }) => (
       <div className="min-w-[200px]">
-        <div className="font-medium">{row.original.name}</div>
+        <div className="font-medium">{row.original.mhArticelName}</div>
         <div className="text-muted-foreground text-xs">
-          {row.original.category}
+          {row.original.coffeeForm}
         </div>
       </div>
     ),
   },
   {
-    accessorKey: "mhNumber",
+    accessorKey: "mhArticelNumber",
     header: "MH Nummer",
     cell: ({ row }) => (
-      <span className="font-mono text-xs">{row.original.mhNumber}</span>
+      <span className="font-mono text-xs">{row.original.mhArticelNumber}</span>
     ),
   },
   {
-    accessorKey: "c4cNumber",
+    accessorKey: "c4cArticelNumber",
     header: "C4C Nummer",
     cell: ({ row }) => (
-      <span className="font-mono text-xs">{row.original.c4cNumber}</span>
+      <span className="font-mono text-xs">{row.original.c4cArticelNumber}</span>
     ),
   },
   {

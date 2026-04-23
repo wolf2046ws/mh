@@ -7,6 +7,7 @@ const label: Record<ProductStatus, string> = {
   entwurf: "Entwurf",
   gesperrt: "Gesperrt",
   pruefung: "In Prüfung",
+  approved: "Approved",
 };
 
 const styles: Record<ProductStatus, string> = {
@@ -18,6 +19,8 @@ const styles: Record<ProductStatus, string> = {
     "border-destructive/20 bg-destructive/10 text-destructive",
   pruefung:
     "border-sky-500/20 bg-sky-500/10 text-sky-700 dark:text-sky-400",
+  approved:
+    "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
 };
 
 export function ProductStatusBadge({ status }: { status: ProductStatus }) {

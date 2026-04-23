@@ -7,7 +7,7 @@ export type ProductListParams = {
   category?: string;
   page?: number;
   perPage?: number;
-  sort?: "name" | "updatedAt" | "mhNumber";
+  sort?: "mhArticelName" | "updatedAt" | "mhArticelNumber";
   dir?: "asc" | "desc";
 };
 
@@ -16,6 +16,9 @@ function sortProducts(list: Product[], sort?: string, dir: "asc" | "desc" = "des
     const key = (sort ?? "updatedAt") as keyof Product;
     const av = a[key];
     const bv = b[key];
+    if (av === undefined && bv === undefined) return 0;
+    if (av === undefined) return dir === "asc" ? -1 : 1;
+    if (bv === undefined) return dir === "asc" ? 1 : -1;
     if (av < bv) return dir === "asc" ? -1 : 1;
     if (av > bv) return dir === "asc" ? 1 : -1;
     return 0;
@@ -44,16 +47,16 @@ export async function fetchProducts(
     const q = search.toLowerCase();
     filtered = filtered.filter(
       (p) =>
-        p.name.toLowerCase().includes(q) ||
-        p.mhNumber.toLowerCase().includes(q) ||
-        p.c4cNumber.toLowerCase().includes(q),
+        p.mhArticelName.toLowerCase().includes(q) ||
+        p.mhArticelNumber.toLowerCase().includes(q) ||
+        p.c4cArticelNumber.toLowerCase().includes(q),
     );
   }
   if (status !== "all") {
     filtered = filtered.filter((p) => p.status === status);
   }
   if (category) {
-    filtered = filtered.filter((p) => p.category === category);
+    filtered = filtered.filter((p) => p.coffeeForm === category || p.packagingType === category);
   }
 
   filtered = sortProducts(filtered, sort, dir);
