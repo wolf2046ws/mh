@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Providers } from "@/components/providers";
 import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Kurator Editorial Dashboard",
-  description: "Premium SaaS Dashboard",
+  description:
+    "MH/C4C Stammdaten-Management, Freigaben, Audit und Maschinenführer-Übersicht",
 };
 
 export default function RootLayout({
@@ -12,9 +25,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de" className="light">
-      <body className="bg-surface text-on-surface antialiased overflow-hidden font-body">
-        {children}
+    <html lang="de" suppressHydrationWarning>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground min-h-screen font-sans antialiased`}
+      >
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
