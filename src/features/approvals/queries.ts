@@ -17,8 +17,9 @@ export async function fetchApprovals(
     const q = search.toLowerCase();
     list = list.filter(
       (a) =>
-        a.productName.toLowerCase().includes(q) ||
-        a.mhNumber.toLowerCase().includes(q) ||
+        a.mhArticelName.toLowerCase().includes(q) ||
+        a.mhArticelNumber.toLowerCase().includes(q) ||
+        a.c4cArticelNumber.toLowerCase().includes(q) ||
         a.change.toLowerCase().includes(q),
     );
   }

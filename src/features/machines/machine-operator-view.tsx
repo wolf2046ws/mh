@@ -5,26 +5,28 @@ import Image from "next/image";
 
 export function MachineOperatorView() {
   const identifiers = [
-    { label: "GTIN / EAN", value: "4012345678901" },
-    { label: "Artikelnummer (SKU)", value: "ESP-PREM-500" },
-    { label: "Charge / Batch", value: "L-2024-03-15-A" },
-    { label: "Interne ID", value: "PRD-9982-XYZ" },
+    { label: "M&H Art.-Nummer", value: "MH-21626-A" },
+    { label: "C4C Art.-Nummer", value: "1011-256" },
+    { label: "Beutel Barcode", value: "200165889" },
+    { label: "EAN Karton Code", value: "300214889" },
+    { label: "Karton-Nr./Name", value: "C4C 6er Karton" },
   ];
 
   const specifications = [
-    { label: "Röstgrad", value: "Dark Roast (Espresso)" },
-    { label: "Herkunft", value: "Kolumbien, Äthiopien" },
+    { label: "Form", value: "Bohne" },
     { label: "Gewicht", value: "500g" },
-    { label: "Verpackungsart", value: "Ventilbeutel mit Clip" },
-    { label: "Haltbarkeit", value: "12 Monate" },
+    { label: "Verpackungsart", value: "Zipper" },
+    { label: "Haltbarkeit (MHD)", value: "18 Monate" },
+    { label: "Logistik", value: "Euro-Palette (5 Lagen / 50 Kartons)" },
   ];
 
   const samplePhotos = [
-    { src: "/images/coffee/photo1.png", alt: "Kaffeebeutel Schwarz Seite" },
-    { src: "/images/coffee/photo2.png", alt: "Kaffeebeutel Front" },
-    { src: "/images/coffee/photo3.png", alt: "Karton" },
-    { src: "/images/coffee/photo4.png", alt: "Kaffeebeutel Hinten" },
-    { src: "/images/coffee/photo5.png", alt: "Qualitätsstempel" },
+    { src: "/images/coffee/photo1.png", alt: "Muster Vorderseite" },
+    { src: "/images/coffee/photo2.png", alt: "Muster Rückseite" },
+    { src: "/images/coffee/photo3.png", alt: "Muster Stempel" },
+    { src: "/images/coffee/photo4.png", alt: "Muster Barcode" },
+    { src: "/images/coffee/photo5.png", alt: "Muster Seiten Photo" },
+    { src: "/images/coffee/photo1.png", alt: "Muster Karton Etikett" },
   ];
 
   return (

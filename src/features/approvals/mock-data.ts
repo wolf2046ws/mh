@@ -25,8 +25,9 @@ export function generateApprovals(count = 40): Approval[] {
     d.setHours(d.getHours() - i * 3);
     return {
       id: `apr-${String(i + 1).padStart(4, "0")}`,
-      productName: `Artikel ${["Hydra Pro", "Swift Step", "AudioSphere", "Chronos", "Aurora"][i % 5]} #${i + 1}`,
-      mhNumber: `MH-${2000 + i * 5}-${String.fromCharCode(65 + (i % 26))}`,
+      mhArticelName: `Artikel ${["Hydra Pro", "Swift Step", "AudioSphere", "Chronos", "Aurora"][i % 5]} #${i + 1}`,
+      mhArticelNumber: `MH-${2000 + i * 5}-${String.fromCharCode(65 + (i % 26))}`,
+      c4cArticelNumber: `C4C-${20000 + i * 11}`,
       change: changes[i % changes.length],
       requestedBy: people[i % people.length],
       requestedAt: d.toISOString(),

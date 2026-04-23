@@ -59,9 +59,12 @@ function ApprovalRow({ item }: { item: Approval }) {
         </Avatar>
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="font-medium">{item.productName}</span>
+            <span className="font-medium">{item.mhArticelName}</span>
             <span className="text-muted-foreground font-mono text-xs">
-              {item.mhNumber}
+              {item.mhArticelNumber}
+            </span>
+            <span className="text-muted-foreground font-mono text-xs">
+              {item.c4cArticelNumber}
             </span>
             <Badge
               variant="outline"
@@ -83,14 +86,14 @@ function ApprovalRow({ item }: { item: Approval }) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => toast.error(`${item.productName} abgelehnt`)}
+            onClick={() => toast.error(`${item.mhArticelName} abgelehnt`)}
           >
             <X />
             Ablehnen
           </Button>
           <Button
             size="sm"
-            onClick={() => toast.success(`${item.productName} freigegeben`)}
+            onClick={() => toast.success(`${item.mhArticelName} freigegeben`)}
           >
             <Check />
             Freigeben

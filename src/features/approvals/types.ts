@@ -3,8 +3,9 @@ export type ApprovalPriority = "low" | "normal" | "high" | "urgent";
 
 export type Approval = {
   id: string;
-  productName: string;
-  mhNumber: string;
+  mhArticelName: string;
+  mhArticelNumber: string;
+  c4cArticelNumber: string;
   change: string;
   requestedBy: string;
   requestedAt: string;
